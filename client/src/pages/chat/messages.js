@@ -14,7 +14,7 @@ const Messages = ({ socket }) => {
         {
           message: data.message,
           username: data.username,
-          __createdtime__: data.__createdtime__,
+          createdAt: data.__createdtime__,
         },
       ])
     })
@@ -37,8 +37,8 @@ const Messages = ({ socket }) => {
 
   // dd/mm/yyyy, hh:mm:ss
   function formatDateFromTimestamp(timestamp) {
-    const date = new Date(timestamp);
-    return date.toLocaleString();
+    const date = new Date(timestamp)
+    return date.toLocaleString()
   }
 
   return (
@@ -47,16 +47,14 @@ const Messages = ({ socket }) => {
         <div className={styles.message} key={i}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span className={styles.msgMeta}>{msg.username}</span>
-            <span className={styles.msgMeta}>
-              {formatDateFromTimestamp(msg.__createdtime__)}
-            </span>
+            <span className={styles.msgMeta}>{formatDateFromTimestamp(msg.createdAt)}</span>
           </div>
           <p className={styles.msgText}>{msg.message}</p>
           <br />
         </div>
       ))}
     </div>
-  );
+  )
 };
 
 export default Messages;
