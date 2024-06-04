@@ -50,6 +50,7 @@ io.on('connection', (socket) => {
     socket.emit('chatroom_users', chatRoomUsers)
 
     const last100Messages = await Message.find({ room }).sort({ createdAt: -1 }).limit(100)
+    console.log('last100Messagesne', last100Messages)
     socket.emit('last_100_messages', last100Messages)
   })
 

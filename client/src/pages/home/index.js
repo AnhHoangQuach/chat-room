@@ -25,10 +25,10 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
 
         <select className={styles.input} onChange={(e) => setRoom(e.target.value)}>
           <option>-- Select Room --</option>
-          <option value="Family">Family</option>
-          <option value="Friends">Friends</option>
-          <option value="Work">Work</option>
-          <option value="Party">Party</option>
+          <option value="family">family</option>
+          <option value="friends">friends</option>
+          <option value="work">work</option>
+          <option value="party">party</option>
         </select>
 
         <button className="btn btn-secondary" style={{ width: '100%' }} onClick={joinRoom}>
